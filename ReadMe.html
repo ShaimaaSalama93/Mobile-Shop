@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--Meta-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><!--to make it compatible for internet explor-->
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!--for Mobile first-->
+    <title>ReadMe</title>
+    <style>
+        .Big_container{
+            padding: 20px 0 50px 0;
+            width: 900px;
+            margin: 0 auto;
+            color: #586069;
+            line-height: 1.7em;
+        }
+        .container{
+            border: 1px solid #e1e4e8;
+        }
+        .container  h5{
+            padding: 15px 10px;
+            background-color: #fafbfc;
+            border: 1px solid #e1e4e8;
+            margin: 0;
+
+        }
+        .Data_conatiner{
+            padding: 30px 40px;
+        }
+        .Data_conatiner h3{
+            border-bottom: 1px solid #e1e4e8;
+            padding: 5px 10px;
+        }
+        ul{
+            list-style: decimal;
+        }
+        ul li{
+            padding: 5px 0;
+        }
+        ul li ul{
+            list-style: disc;
+            color: #a0a2a6;
+        }
+        span{
+            background-color: #f0f3f7;
+            padding: 5px;
+            border-radius: 5px;
+            margin: 5px;
+        }
+        .Example{
+            background-color: #f0f3f7;
+            padding: 7px;
+        }
+    </style>
+</head>
+<body>
+<div class="Big_container">
+    <h4>BEE Interactive Front End Task</h4>
+    <div class="container">
+        <h5>Mobile Shop</h5>
+        <div class="Data_conatiner">
+            <h3>Project Files Accessing</h3>
+            <ul>
+            	<li><span>ng serve --o</span></li>
+                <li>Main    : http://localhost:4200/home</li>
+                <li>Details : http://localhost:4200/home/details/1</li>
+            </ul>
+            <h3>Languages Used </h3>
+            <ul>
+                <li>Html</li>
+                <li>Css</li>
+                <li>Sass</li>
+                <li>jQuery</li>
+                <li>Anguler 2</li>
+                <li>Bootstrap 3</li>
+            </ul>
+            <h3>Main Features : </h3>
+            <ul>
+                <li>Multi-Language</li>
+                <li>Multi-Currency</li>
+                <li>Multi-Color</li>
+                <li>
+                    Product Filter
+                    <ul>
+                        <li>Brand Filter</li>
+                        <li>Color Filter</li>
+                        <li>Price Filter [min,max]</li>
+                    </ul>
+                </li>
+            </ul>
+            <h3>1 - Multi-Language </h3>
+            <p>The Application is designed to be multi-language By inserting the data in an <span>object of arrays.</span>
+                Each array contains 2 cells the first cell has the value in English and the second cell contains the value in arabic.
+            </p>
+            <p class="Example"> LanguageData={
+                Home:["Home","الرئيسية"],
+                Contact:["Contact","تواصل معنا"] , etc... }
+            </p>
+            <p>By using <span>Click Event Binding</span> to apply the language function <span>(click)="Language(i)"</span></p>
+            <p><span>if ( i == 0 ) >> English Language elseif ( i == 1 ) >> Arabic Language.</span></p>
+            <pre>
+                i=0;
+                languageTitle="English";
+                Language(lang){
+                 this.i=lang;
+                 if(lang==1){
+                    this.languageTitle="العربية";
+                 }
+                 else{
+                    this.languageTitle="English"
+                 }
+                }</pre>
+            Arabic -->> According to the Style I used this Function to add some files when Arabic language is used
+            <pre>
+                $('#Ar').click(function(){
+                $('head').append(' link rel="stylesheet" href="bootstrap-rtl.min.css" ');
+                $('head').append(' link href="assets/css/Home_AR.css" rel="stylesheet" ');
+                });
+            </pre>
+            English -->> when English langusge selected the arabic Style files are removed
+            <pre>
+                $('#En').click(function(){
+                $("LINK[href*='Home_AR.css']").remove();
+                $("LINK[href*='bootstrap-rtl.min.css']").remove();
+                });
+            </pre>
+
+            <h3>2 - Multi-Currency </h3>
+            In this Feature I depended on <span>2 way data binding</span> <span>[(ngModel)]</span>
+            , <span>Event binding (Change)</span> , <span> @output </span> and <span>EventEmitter</span>
+            <p>The currency options are radio inputs when click on any option ngModel and EventEmitter will fire</p>
+            <span class="Example">" [(ngModel)]="Currency" (change)="CurrencySelectedChange()" "</span>
+            <p>
+                Note: This is the Price Equation <span class="Example">{{ (phone.price * CurrencyConvert)}}</span>
+                The price is stored in <span>EGP</span> Currency  So,
+                if EGP option is fired <span>CurrencyConvert = 1</span>
+                elseif  USD option is fired <span>CurrencyConvert = 0.05</span> To convert it to the right value of the currency.
+            </p>
+            <pre>
+                Currency: string = 'EGP';
+                CurrencyConvert=1;
+                @Output()
+                CurrencySelected: EventEmitter "string" = new EventEmitter "string"();
+                CurrencySelectedChange() {
+                this.CurrencySelected.emit(this.Currency);
+
+                if(this.Currency == "USD"){
+                this.CurrencyConvert=(0.05);
+                }
+                else{
+                this.CurrencyConvert=1;
+                }
+                }
+            </pre>
+            <h3>3 - Multi-Color </h3>
+            This Application is offered by 4 colors each color has it's one style file which change only the color.
+            When click on any color the default color file.css is replaced by the choosed color.
+            <pre>
+                $(".colorSetting .color-palet li").click(function(){
+                $("link[href*='Theme']").attr("href",$(this).attr("data-value"));
+                });
+            </pre>
+
+            <h3>4 - Product Filter </h3>
+            On This Feature I used Anguler 2 pipe to filter the product according what the user choose.
+            <ul>
+                <li><span>Filter By Price</span></li>
+
+                <p>To filter by price I used 2 <span>inputs type= range</span> and 2 way data binding <span>[(ngModel)]</span>
+                    and the ration that the user select (sliderValuemin) and (sliderValuemin) is rendered to the pipe to filter according it.
+                </p>
+                <p class="Example">" input type="range" min="1000" max="10000" [(ngModel)]="sliderValuemin" "</p>
+                <p class="Example">" input type="range" min="1000" max="10000" [(ngModel)]="sliderValuemax" "</p>
+
+                <li><span>Filter By Color</span></li>
+                IN this Feature I used <span>(Change) Event Binding </span> to render the color when the user select
+                <p><span>(change)="colorChecked(WhiteColor.checked ,'white')"</span></p>
+
+                <li><span>Filter By Brand</span></li>
+                Filtering By Brand is the same of filtering By Color
+                <p><span>(change)="BrandChecked(SonyBrand.checked ,'Sony')"</span></p>
+            </ul>
+            <h4>Pipe Method</h4>
+            <pre>
+            transform(value, min,max,color,brand) {return value.filter(phone =>{
+        	let res;
+        	if(color == "all" && brand == "all"){
+             	res= phone.price >= min && phone.price <= max;
+             }
+            if(color != "all" && brand == "all"){
+             	res= phone.price >= min && phone.price <= max && phone.color == color;
+             }
+            if(color == "all" && brand != "all"){
+             	res= phone.price >= min && phone.price <= max && phone.brand == brand;
+             }
+             if(color != "all" && brand != "all"){
+             	res= phone.price >= min && phone.price <= max && phone.color == color && phone.brand == brand;
+             }
+             return res ;
+            })
+            }
+            </pre>
+            <p>The First Condition Means if No color or brand selected >> All Values will show according to default price values.</p>
+            <p>The Second Condition Means color is selected >> filter by price and color.</p>
+            <p>The Third Condition Means brand is selected >> filter by price and Brand.</p>
+            <p>The Fourth Condition Means color and brand is selected >> pipe filters by Price , Color and Brand.</p>
+            <p>How we invoke The pipe</p>
+            <p class="Example">*ngFor="let phone of phones | ProductFilter:sliderValuemin:sliderValuemax:phoneColor:phoneBrand "</p>
+            <h3>5 - Routing </h3>
+            <pre>
+                const appRoutes: Routes = [
+                { path: 'home', component: HomeComponent },
+                { path: 'home/details/:code', component: ProductDetailsComponent },
+                { path: '**', redirectTo: '/home', pathMatch: 'full'},
+                { path: '', redirectTo: '/home', pathMatch: 'full' },
+                ];
+            </pre>
+            <p><span>"router-outlet"</span></p>
+            <p><span>routerLink="/home"</span></p>
+            <p><span>[routerLink]="['/home/details',phone.code]"</span></p>
+
+
+        </div>
+    </div>
+</div>
+</body>
+</html>
