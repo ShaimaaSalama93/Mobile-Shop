@@ -1,0 +1,80 @@
+/******************Header*******************************/
+/*********toggle******/
+.load {
+  background-color: #b792d8;
+}
+
+/************Header******/
+.page-header .glyphicon {
+  color: #b792d8;
+}
+
+/***********Nav********/
+.navbar .container .navbar-nav > li a:before {
+  border-bottom: 4px solid #b792d8;
+}
+.navbar .container .Search {
+  background-color: #b792d8;
+}
+
+/******************Home*******************************/
+/*******Colors*************/
+.colorSetting .color {
+  background-color: #b792d8;
+}
+.colorSetting .color-palet {
+  border: 1px solid #b792d8;
+}
+
+/*********GoToTop**********/
+.scrollup {
+  background-color: #b792d8;
+}
+
+/******Category*************/
+.Category .Category-left .form button {
+  border: 1px solid #b792d8;
+}
+.Category .Category-left .form button a {
+  color: #b792d8;
+}
+.Category .filter {
+  border: 1px solid #b792d8;
+  background-color: #b792d8;
+}
+.Category .Category-right .Category-right-item .item-content .price {
+  color: #b792d8;
+}
+.Category .Category-right nav .pagination > li > a, .Category .Category-right nav .pagination > li > span {
+  color: #b792d8;
+}
+.Category .Category-right nav .pagination > .active > a,
+.Category .Category-right nav .pagination > .active > a:focus,
+.Category .Category-right nav .pagination > .active > a:hover,
+.Category .Category-right nav .pagination > .active > span,
+.Category .Category-right nav .pagination > .active > span:focus,
+.Category .Category-right nav .pagination > .active > span:hover {
+  background-color: #b792d8;
+  border-color: #b792d8;
+}
+
+/******************Footer*******************************/
+footer hr {
+  background-color: #b792d8;
+}
+footer li a:hover {
+  color: #b792d8;
+}
+footer .Small-Footer {
+  background-color: #b792d8;
+}
+
+/****************Product Details**********************/
+.Details .container .item-content .price {
+  color: #b792d8;
+}
+
+.Details .container .item-content .Cart {
+  border: 1px solid #b792d8;
+  background-color: #b792d8;
+}

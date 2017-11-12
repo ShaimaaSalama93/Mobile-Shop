@@ -1,0 +1,185 @@
+/*******Colors*************/
+.colorSetting{
+  position: absolute;
+  top: 85px;
+  left: 0;
+  z-index: 2;
+  .color{
+    width: 40px;
+    height: 40px;
+    position: relative;
+    top:85px;
+    left: 0;
+    background-color: $FirstColor;
+    z-index: 5;
+    border-radius: 2px;
+    a{
+      position: absolute;
+      right: 0;
+      top:0;
+      bottom: 0;
+      left: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      svg{
+        width: 27px;
+        height: 27px;
+        fill: white;
+      }
+    }
+  }
+  .color-palet{
+    display: flex;
+    position: absolute;
+    top: 103px;
+    left: 20px;
+    margin: 20px;
+    border: 1px solid $FirstColor;
+    padding: 15px;
+    li{
+      width: 20px;
+      height: 20px;
+      margin: 2px;
+      cursor: pointer;
+    }
+    .move{
+      background-color: #b792d8;
+    }
+    .green{
+      background-color: #6cc118 ;
+    }
+    .blue{
+      background-color: #028bff;
+    }
+    .orange{
+      background-color: #f69303;
+    }
+
+  }
+}
+/*********GoToTop**********/
+.scrollup{
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  bottom:50px;
+  right: 50px;
+  background-color: $FirstColor;
+  z-index: 5;
+  border-radius: 2px;
+  a{
+    position: absolute;
+    right: 0;
+    top:0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    svg{
+      width: 10px;
+      height: 10px;
+      fill: white;
+    }
+  }
+}
+/*******ProductDetails***/
+.Details{
+  padding: 50px 0;
+  box-sizing: border-box;
+  .container{
+    .ProductImages{
+      .SmallImg{
+       img{
+         max-width: 65%;
+         margin: 5px auto;
+         border: 1px solid $SecondColor;
+         padding: 5px;
+         display: block;
+       }
+      }
+      .BigImage{
+        img{
+          max-width: 65%;
+        }
+      }
+
+    }
+    .item-content{
+      a{
+        display: block;
+        text-decoration: none;
+        font-size: 30px;
+      }
+      .brand{
+        color: #6C7778;
+        font-size: 18px;
+        display: block;
+        margin: 10px 0;
+      }
+      .price{
+        display: flex;
+        font-size: 20px;
+        color: $FirstColor;
+        margin: 5px 0;
+        font-weight: 600;
+        span{
+          margin-left: 3px;
+        }
+        p{
+          margin: 0;
+        }
+      }
+      .free{
+        font-weight: 600;
+      }
+      .rate{
+        margin: 5px 0;
+        .glyphicon{
+          color: $SecondColor;
+        }
+        .plusrate{
+          color:#fad000 ;
+        }
+        .rateNum{
+          font-size: 15px;
+        }
+      }
+      .Cart{
+        width: 120px;
+        border: 1px solid $FirstColor ;
+        margin: 23px auto 0 auto;
+        border-radius: 2px;
+        color: White;
+        background-color: $FirstColor;
+        font-weight: 600;
+        font-size: 16px;
+        align-items: center;
+        padding: 5px 15px;
+      }
+    }
+  }
+}
+/*****Specification*****/
+.specification{
+  .Sp{
+    padding: 0 15px;
+  }
+  .Sp-Title{
+    h3{
+  font-size: 20px;
+    }
+  }
+  .Sp-Data{
+    h3{
+      color:#6C7778 ;
+      font-size: 20px;
+    }
+  }
+  p{
+    font-size: 18px;
+    color:#6C7778 ;
+  }
+}
+

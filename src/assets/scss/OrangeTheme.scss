@@ -1,0 +1,114 @@
+$FirstColor : #f69303;
+/******************Header*******************************/
+/*********toggle******/
+.load{
+  background-color: $FirstColor;
+}
+/************Header******/
+.page-header{
+  .glyphicon{
+    color: $FirstColor ;
+  }
+}
+/***********Nav********/
+.navbar{
+  .container {
+    .navbar-nav>li{
+      a{
+        &:before
+        {
+          border-bottom: 4px solid $FirstColor;
+        }
+      }
+    }
+    .Search{
+      background-color: $FirstColor;
+    }
+  }
+}
+
+/******************Home*******************************/
+
+/*******Colors*************/
+.colorSetting{
+  .color{
+    background-color: $FirstColor;
+  }
+  .color-palet{
+    border: 1px solid $FirstColor;
+  }
+}
+/*********GoToTop**********/
+.scrollup{
+  background-color: $FirstColor;
+}
+/******Category*************/
+.Category{
+  .Category-left{
+   .form{
+     button{
+       border: 1px solid $FirstColor ;
+       a{
+         color: $FirstColor;
+       }
+     }
+   }
+  }
+   .filter{
+    border: 1px solid $FirstColor ;
+     background-color: $FirstColor;
+  }
+  .Category-right{
+    .Category-right-item{
+      .item-content{
+        .price{
+          color: $FirstColor;
+        }
+      }
+    }
+    nav{
+      .pagination>li>a, .pagination>li>span{
+        color: $FirstColor;
+      }
+      .pagination>.active>a,
+      .pagination>.active>a:focus,
+      .pagination>.active>a:hover,
+      .pagination>.active>span,
+      .pagination>.active>span:focus,
+      .pagination>.active>span:hover{
+        background-color: $FirstColor;
+        border-color:$FirstColor ;
+      }
+    }
+  }
+}
+
+
+
+/******************Footer*******************************/
+footer{
+  hr{
+    background-color: $FirstColor;
+  }
+  li{
+    a{
+      &:hover{
+        color: $FirstColor;
+      }
+    }
+  }
+  .Small-Footer{
+    background-color: $FirstColor;
+  }
+}
+
+/****************Product Details**********************/
+.Details .container .item-content .price{
+  color: $FirstColor;
+}
+.Details .container .item-content .Cart{
+  border: 1px solid $FirstColor;
+  background-color: $FirstColor;
+}
+
+

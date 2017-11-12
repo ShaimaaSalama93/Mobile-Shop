@@ -1,0 +1,149 @@
+footer{
+  background-color: #f8f8f8;
+  hr{
+    background-color: $FirstColor;
+    height: 3px;
+    border: none;
+    width: 100%;
+  }
+  h2{
+    text-transform: uppercase;
+    margin: 0 0 20px 0;
+    font-size: 23px;
+  }
+  li{
+    padding: 5px;
+    a{
+      font-size: 15px;
+      color: #6C7778;
+      @include transition(0.3);
+      &:hover{
+        text-decoration: none;
+        color: $FirstColor;
+      }
+    }
+  }
+  .Big-Footer{
+    .container{
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+  }
+  .Small-Footer{
+    background-color: $FirstColor;
+    .container{
+      padding: 10px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .footer-left{
+        width: 30%;
+        p{
+          margin: 0;
+          color: $SecondColor;
+          font-weight: 600;
+        }
+      }
+      .footer-right {
+        width: 70%;
+        ul {
+          display: flex;
+          justify-content: flex-end;
+          li {
+            a {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              width: 22px;
+              height: 22px;
+              border-radius: 50%;
+              background-color: $SecondColor;
+              @include transition(0.3);
+              svg {
+                height: 13px;
+                width: 13px;
+                fill: #3d4755;
+                @include transition(0.3);
+              }
+            }
+          }
+          .facebook {
+            &:hover {
+              background: #3b5998;
+              @include transition(0.3);
+
+              svg {
+                fill: #fff;
+                @include transition(0.3);
+              }
+            }
+          }
+          .twitter {
+            &:hover {
+              background: #76a9ea;
+              @include transition(0.3);
+              svg {
+                fill: #fff;
+                @include transition(0.3);
+              }
+            }
+          }
+          .instagram {
+            &:hover {
+              background: #6a453b;
+              @include transition(0.3);
+              svg {
+                fill: #fff;
+                @include transition(0.3);
+              }
+            }
+          }
+          .linkedin {
+            &:hover {
+              background: #0084b1;
+              @include transition(0.3);
+
+              svg {
+                fill: #fff;
+                @include transition(0.3);
+              }
+            }
+          }
+          .youtube {
+            &:hover {
+              background: #ff0000;
+              @include transition(0.3);
+
+              svg {
+                fill: #fff;
+                @include transition(0.3);
+              }
+            }
+          }
+          .googleplus {
+            &:hover {
+              background: #d83a2c;
+              @include transition(0.3);
+
+              svg {
+                fill: #fff;
+                @include transition(0.3);
+              }
+            }
+          }
+          .pinterest {
+            &:hover {
+              background: #bd081c;
+              @include transition(0.3);
+
+              svg {
+                fill: #fff;
+                @include transition(0.3);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

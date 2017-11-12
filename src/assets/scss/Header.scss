@@ -1,0 +1,187 @@
+/*********toggle******/
+.load{
+  display: none;
+  background-color: #6cc118;
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 99999;
+  /*Common*/
+  .nav {
+    margin-top: 60px;
+    li {
+      a {
+        font-size: 15px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        color: white;
+        &:hover, &:focus {
+          background-color: rgba(2,2,2,0.3);
+          border-radius:10px ;
+        }
+      }
+    }
+  }
+  /****Social Icon******/
+  .socialIcon {
+    /*Social media*/
+    ul {
+      display: flex;
+      margin: 20px 0;
+      li {
+        margin: 5px;
+        a {
+          svg {
+            height: 15px;
+            width: 15px;
+            fill: white;
+            @include transition(0.3);
+          }
+        }
+      }
+    }
+    /*close icon**/
+    .glyphicon{
+      position: absolute;
+      right:0;
+      top: 15px;
+      color: white;
+      cursor: pointer;
+      padding:10px;
+    }
+  }
+}
+/************Header******/
+.page-header{
+  padding-bottom: 0;
+  margin: 0;
+  .btn{
+    background-color: transparent;
+    padding-left: 0;
+    svg{
+      width: 16px;
+      height: 16px;
+      margin-right: 4px;
+      display: inline-block;
+      vertical-align: -3px;
+    }
+  }
+  .glyphicon{
+    font-size: 11px;
+    left: 2px;
+    color: $FirstColor ;
+  }
+  /*header*/
+  .navbar-left{
+    float: left;
+    li{
+      float: left;
+    }
+  }
+  .navbar-right{
+    float: right;
+    li{
+      float: left;
+    }
+  }
+  /*Language + Currancy*/
+  .navbar-nav>li>.dropdown-menu{
+    .dropdown-item{
+      display: block;
+      text-decoration: none;
+      margin-left: 5px;
+      svg{
+        width: 16px;
+        height: 16px;
+        margin-right: 4px;
+        vertical-align: -3px;
+      }
+    }
+    div.dropdown-item{
+      display: flex;
+      input{
+        margin-top: 3px;
+      }
+      span{
+        margin: 0 3px;
+      }
+    }
+  }
+  .btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus{
+    outline: 0;
+    box-shadow: none;
+  }
+  /*Header left*/
+  .navbar-nav>li>a{
+    padding: 6px 10px;
+    background-color: transparent;
+    .glyphicon{
+      left:0;
+      margin-right: 5px;
+      margin-left: 5px;
+    }
+  }
+}
+/***********Nav********/
+.navbar{
+  margin-bottom: 0;
+  .container {
+    .navbar-brand {
+      margin-left: 0;
+      padding: 0;
+      img {
+        max-width: 60%;
+        vertical-align: -27px;
+        margin: 7px 0;
+      }
+    }
+    .navbar-nav>li{
+      a{
+        &:before
+        {
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 0;
+          border-bottom: 4px solid $FirstColor;
+          bottom: -3px;
+          left: 0;
+          -webkit-transform: scaleX(0);
+          -ms-transform: scaleX(0);
+          transform: scaleX(0);
+          @include transition(0.4);
+        }
+        &:hover:before
+        {
+          -webkit-transform: scaleX(1);
+          -ms-transform: scaleX(1);
+          transform: scaleX(1);
+        }
+      }
+
+      &:last-child{
+        a{
+          padding-right: 0;
+        }
+      }
+    }
+    .Search{
+      position: absolute;
+      right: 120px;
+      top: 50px;
+      z-index: 1;
+      padding: 10px;
+      background-color: $FirstColor;
+      border: none;
+      -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+      box-shadow: 0 6px 12px rgba(0,0,0,.175);
+      @include Placeholder(white);
+      color: white;
+      font-size: 15px;
+      font-weight: 600;
+      width: 250px;
+    }
+  }
+}
+
+
